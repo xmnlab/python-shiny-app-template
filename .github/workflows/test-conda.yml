@@ -1,0 +1,21 @@
+name: test-conda
+on: [push, pull_request]
+jobs:
+  testing-conda:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: conda-incubator/setup-miniconda@v2
+        with:
+          miniconda-version: "latest"
+          mamba-version: "*"
+          environment-file: conda/env.yml
+          channels: conda-forge,nodefaults
+          activate-environment: shinyapp
+          use-mamba: true
+          miniforge-variant: Mambaforge
+      - shell: bash -l {0}
+        run: |
+          shiny run app.py &
+          sleep 5 &
+          kill %% 

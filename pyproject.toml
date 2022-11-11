@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "shinypython"
+version = "0.1.0"
+description = "A template for shiny for python"
+authors = ["EverVino <evervino00@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+shiny = "^0.2.9"
+matplotlib = "^3.6.2"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
