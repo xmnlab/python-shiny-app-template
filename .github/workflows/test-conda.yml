@@ -16,6 +16,6 @@ jobs:
           miniforge-variant: Mambaforge
       - name: running with conda #shell: bash -l {0}
         run: |
-          shiny run arc/app.py &
+          shiny run src/app.py &
           sleep 5 &
           kill %% 
