@@ -14,8 +14,8 @@ jobs:
           activate-environment: shinyapp
           use-mamba: true
           miniforge-variant: Mambaforge
-      - shell: bash -l {0}
+      - name: running with conda #shell: bash -l {0}
         run: |
-          shiny run app.py &
+          shiny run arc/app.py &
           sleep 5 &
           kill %% 
