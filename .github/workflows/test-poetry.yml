@@ -1,5 +1,8 @@
 name: poetry-test
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - app_docker
 jobs:
   testing-poetry:
     runs-on: ubuntu-latest
